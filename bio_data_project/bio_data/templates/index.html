@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bio data form</title>
+</head>
+<body>
+    <h1>enter your bio-data</h1>
+    <form method="POST" action="{% url 'display_biodata' %}">
+        {%csrf_token%}
+        <label>Name:</label>
+        <input type="text" name="name" required><br>
+        <label>Age:</label>
+        <input type="number" name="age" required><br>
+        <label>Email:</label>
+        <input type="text" name="email" required> <br>
+        <label>Address:</label>
+        <input type="text" name="address" required><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
