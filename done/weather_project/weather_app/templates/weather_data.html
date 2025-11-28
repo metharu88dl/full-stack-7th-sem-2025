@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather-Fetching application</title>
+    </head>
+    <body>
+        <form method="GET">
+            <label>City:</label>
+            <input type="text" name="city" placeholder="enter city" required>
+            <input type="submit" value="Submit">
+        </form>
+        {% if weather.error %}
+        <p style="color:red">{{weather.error}}</p>
+        {% else %}
+        <h2>Weather in {{weather.city}} </h2>
+        <p> Temperature: {{weather.temperature}}°C</p>
+        <p> Description: {{weather.description}}</p>
+        <img src="http://openweathermap.org/img/w/{{weather.icon}}.png" 
+        alt="Weather icon" >
+        {% endif %}
+
+    </body>
+</html>
